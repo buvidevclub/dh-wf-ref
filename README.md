@@ -1,2 +1,2 @@
 # dh-wf-ref
-Reference repo for OIDC authentication
+Workflow library repo to be called from service / project repositories.
