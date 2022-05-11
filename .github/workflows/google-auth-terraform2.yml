@@ -5,12 +5,6 @@ on:
       gcp_project_id:
         required: true
         type: string
-      gcp_wi_provider:
-        required: true
-        type: string
-      gcp_serviceaccount:
-        required: true
-        type: string
       tf_workdir:
         required: false
         type: string
