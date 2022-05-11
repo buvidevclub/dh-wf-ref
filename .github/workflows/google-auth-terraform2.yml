@@ -18,8 +18,7 @@ jobs:
     name: Setup auth and Cloud SDK, run Terraform
     runs-on: ubuntu-latest
 
-    environment: ${{ env.ENVIRONMENT }}
-
+    environment: develop
     permissions:
       contents: 'read'
       id-token: 'write'
