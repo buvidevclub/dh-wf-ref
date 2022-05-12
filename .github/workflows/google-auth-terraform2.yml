@@ -50,16 +50,16 @@ jobs:
       uses: 'google-github-actions/setup-gcloud@v0'
     - name: 'Use gcloud CLI'
       run: 'gcloud info'
-    - id: git_token
-      uses: de-vri-es/setup-git-credentials@v2
-      with:
-        credentials: ${{ secrets.GITHUB_TOKEN }}
+    # - id: git_token
+    #   uses: de-vri-es/setup-git-credentials@v2
+    #   with:
+    #     credentials: ${{ secrets.GITHUB_TOKEN }}
     - id: init
       uses: hashicorp/setup-terraform@v2
 
     - name: Terraform init
       run: |
-        git config -l
+        git config --global url."https://oauth2:${{ secrets.GITHUB_TOKEN }}@github.com".insteadOf https://github.com
         [ "${TF_WORKDIR}" != "" ] && cd ${TF_WORKDIR}
         terraform init -backend-config="bucket=${PROJECT_ID}-tfstate" -backend-config="prefix=${GITHUB_REPOSITORY}/${ENVIRONMENT}"
     - id: plan
