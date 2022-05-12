@@ -50,7 +50,10 @@ jobs:
       uses: 'google-github-actions/setup-gcloud@v0'
     - name: 'Use gcloud CLI'
       run: 'gcloud info'
-
+    - id: git_token
+      uses: de-vri-es/setup-git-credentials@v2
+      with:
+        credentials: ${{ secrets.GITHUB_TOKEN }}
     - id: init
       uses: hashicorp/setup-terraform@v2
 
