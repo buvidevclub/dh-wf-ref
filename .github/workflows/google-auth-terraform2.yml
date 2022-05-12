@@ -53,7 +53,7 @@ jobs:
     # - id: git_token
     #   uses: de-vri-es/setup-git-credentials@v2
     #   with:
-    #     credentials: ${{ secrets.GITHUB_TOKEN }}
+    #     credentials: ${{ secrets.ACTIONS_PAT }}
     - id: init
       uses: hashicorp/setup-terraform@v2
 
