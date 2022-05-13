@@ -73,6 +73,7 @@ jobs:
     - id: apply
       name: Terraform apply
       run: |
+        export GITHUB_TOKEN=${{ secrets.ACTIONS_PAT }}
         [ "${TF_WORKDIR}" != "" ] && cd ${TF_WORKDIR}
         terraform apply -auto-approve
     - id: lock
