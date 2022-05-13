@@ -12,6 +12,7 @@ env:
   PROJECT_ID: ${{ secrets.gcp_project_id }}
   TF_WORKDIR: ${{ inputs.tf_workdir }}
   ENVIRONMENT: ${{ inputs.environment }}
+  TF_VAR_gh_token: ${{ secrets.ACTIONS_PAT }}
 
 jobs:
   checkout-auth-terraform:
